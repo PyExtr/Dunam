@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>דונם</title>
+</head>
+<body>
+    <div id="login-box">
+        <div class="left">
+          <h1 id='status'>התחברות לקוח</h1>
+          <input type="text" id="email" name="email" placeholder="                                          אימייל" />
+          <input type="password" id="password" name="password" placeholder="                                         סיסמה" />
+          
+          <input type="submit" id='login' name="login" value="התחברות" />
+      
+        </div>
+        
+        <div class="right">
+          <button id="Dunam" class="Dunam" ></button>
+          <button id="log" class="btns" >הרשמה</button>
+          <button id="log2" class="btns" >התחברות עובד</button>
+          <!-- <A href="sighUp.html">הרשמה</A> -->
+        </div>
+
+      </div>
+</body>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-app.js";
+    import { getDatabase, set ,ref } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-database.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.6/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyAMAgj988wb50C2SDuiwNYO-DxfKJiJn9Y",
+        authDomain: "dunam-finalllll.firebaseapp.com",
+        projectId: "dunam-finalllll",
+        storageBucket: "dunam-finalllll.appspot.com",
+        messagingSenderId: "946890409617",
+        appId: "1:946890409617:web:cdf38e0aa060825bd3a130"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    Dunam.addEventListener('click',(e)=>{
+        location.assign("https://www.dunamreal.com/");
+    });
+
+    log.addEventListener('click',(e)=>{
+        location = "sighUp.html";
+    });
+    log2.addEventListener('click',(e)=>{
+        location = "loginwork.html";
+    });
+
+    login.addEventListener('click',(e)=>{
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        signInWithEmailAndPassword(auth, email, password).then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+
+        location = "Profile.html";
+        // ...
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+        });
+    });
+    const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+
+        if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        // ...
+        } else {
+        // User is signed out
+        // ...
+        }
+    });
+
+logout.addEventListener('click',(e)=>{
+    signOut(auth).then(() => {
+    // Sign-out successful.
+    alert('User logout in!');
+    }).catch((error) => {
+    // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        lert(errorMessage);
+    });
+});
+  </script>
+</html>

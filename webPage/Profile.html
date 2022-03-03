@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="he"></html>
+    <html>
+        <head>
+            <a href="LogIn.html">התנתקות</a>
+            <meta charset='utf-8'>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'>
+            <link href='' rel='stylesheet'>
+            <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+            <title>פרופיל</title>
+            <style>body {
+                margin: 0;
+                padding: 0;
+                background: #DDD;
+                font-size: 16px;
+                color: #222;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+            }
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #1c467c
+}
+
+.profile-button {
+    background: #2b4e61;
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #1c467c
+}
+
+.profile-button:focus {
+    background: #2b4e61;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #2b4e61;
+    box-shadow: none
+}
+.status-button{
+    background: #205211;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #2b4e61;
+    cursor: pointer
+}
+
+.labels {
+    font-size: 11px
+}
+
+button.Dunam {  
+    width: 120px;
+    height: 120px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(5, 5, 5);
+    cursor: pointer;
+    background-image: url("logo.webp");
+    background-color:#2b4e61;
+}
+
+.notification {
+  background-color: #2b4e61;
+  right: -110px;
+  color: white;
+  text-decoration: none;
+  padding: 7px 10px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: #1c467c;
+}
+
+.notification .badge {
+  position: absolute;
+  
+  top: -3px;
+  right: -5px;
+  padding: 3px 5px;
+  border-radius: 50%;
+  background: red;
+  color: white;
+}
+</style>
+    </head>
+    <body oncontextmenu='return false' class='snippet-body'>
+    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="profileimg.png"><span class="font-weight-bold">Nataly</span><span class="text-black-50">NatalyL@braude.ac.il</span><span> </span><button id="Dunam" class="Dunam" ></button></div>
+        </div>
+        <div class="col-md-5 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">הגדרת פרופיל</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6"><label class="labels">שם</label><input type="text" class="form-control" placeholder="שם" value=""></div>
+                    <div class="col-md-6"><label class="labels">שם משפחה</label><input type="text" class="form-control" value="" placeholder="שם משפחה"></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">מספר טלפון</label><input type="text" class="form-control" placeholder="מספר טלפון" value=""></div>
+                    <div class="col-md-12"><label class="labels">כתובת 1</label><input type="text" class="form-control" placeholder="כתובת 1" value=""></div>
+                    <div class="col-md-12"><label class="labels">כתובת 2</label><input type="text" class="form-control" placeholder="כתובת 2" value=""></div>
+                    <div class="col-md-12"><label class="labels">מיקוד</label><input type="text" class="form-control" placeholder="מיקוד" value=""></div>
+                    <div class="col-md-12"><label class="labels">מייל</label><input type="text" class="form-control" placeholder="מייל" value=""></div>
+                    <div class="col-md-12"><label class="labels">ת.ז</label><input type="text" class="form-control" placeholder="ת.ז" value=""></div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6"><label class="labels">שם החברה</label><input type="text" class="form-control" placeholder="שם החברה" value=""></div>
+                    <div class="col-md-6"><label class="labels">ח"פ</label><input type="text" class="form-control" value="" placeholder="ח'פ"></div>
+                </div>
+                <button id="save" class="btn btn-primary profile-button" type="button">שמירת עדכון</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-3 py-5">
+                <button id="save2" class="btn btn-primary profile-button " type="button">מעבר לחוזה</button>
+                <button id="save3" class="btn btn-primary status-button " type="button">סטטוס </button>
+                <a href="#" class="notification">
+                    <span>התראות</span>
+                    <span class="badge">3</span>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src=''></script>
+    <script type='text/Javascript'></script>
+    </body>
+    <script>
+    save.addEventListener('click',(e)=>{
+        alert('הפרטים נשמרו בהצלחה');});
+    save2.addEventListener('click',(e)=>{
+        location = "contract.html"; }); 
+    Dunam.addEventListener('click',(e)=>{
+        location.assign("https://www.dunamreal.com/");
+    });
+    save3.addEventListener('click',(e)=>{
+        alert('זה דמו.. לא מומש בלוגיקה');});
+    </script>
+    </html>
